@@ -1,0 +1,40 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "Sample react app with boilerplate code",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist node_modules",
+    "build": "webpack",
+    "build-babel": "npm run build-babel-server && npm run build-babel-client",
+    "build-babel-server": "babel src/server --out-dir ./dist",
+    "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public",
+    "start": "node ./src/server/index.js",
+    "test": "jest ./src"
+  },
+  "author": "Dhruv Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.2",
+    "webpack-cli": "^2.1.3",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/enzyme.setup.js"
+  }
+}
